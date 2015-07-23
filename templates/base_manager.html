@@ -1,0 +1,86 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="{% static 'materialize/css/materialize.min.css' %}"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="{% static 'main.css' %}"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    </head>
+
+    <body>
+      <header>
+        <div class="row">
+          <div class="col l10 offset-l2">
+            <nav class="top-nav">
+              <div class="container">
+                <!-- //toobar -->
+                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+              </div>
+            </nav>
+          </div>
+        </div>
+        <ul id="nav-mobile" class="side-nav fixed" >
+          <li class="bold"><a href="#" class="waves-effect waves-teal"></a></li>
+          <li class="bold"><a href="#" class="waves-effect waves-teal"></a></li>
+          <li class="bold"><a href="#" class="waves-effect waves-teal">Adicionar Funcionários</a></li>
+          <li class="bold"><a href="#" class="waves-effect waves-teal">desempelho Funcionários</a></li>
+          <li class="bold"><a href="#" class="waves-effect waves-teal">Informações Serviços</a></li>
+          <!-- <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+
+              <li class="bold collapsible-header "><a class=" waves-effect waves-teal">Informações</a>
+                <div class="collapsible-body">
+                  <ul>
+                    <li><a href="#">Funcionarios</a></li>
+                    <li><a href="#">Serviços</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </li> -->
+
+        </ul>
+      </header>
+      <div class="row">
+        <main>
+
+
+                <div class="col l10 offset-l2">
+                  <div class="container">
+                      {% block container %}
+                      {% endblock container %}
+                  </div>
+                </div>
+              
+            </div>
+
+        </main>
+        <footer class="page-footer">
+          <div class="footer-copyright">
+            <div class="container">
+            © 2015 AnyBike
+            <a class="grey-text text-lighten-4 right" href="#!">Projets APS</a>
+            </div>
+          </div>
+        </footer>
+
+      </div>
+
+
+
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="{% static 'jquery/jquery-2.1.4.min.js' %}"></script>
+      <!-- // <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script> -->
+      <script type="text/javascript" src="{% static 'materialize/js/materialize.min.js' %}"></script>
+
+      <script type="text/javascript" src="{% static 'main.js' %}"></script>
+
+
+
+    </body>
+  </html>
+

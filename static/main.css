@@ -1,0 +1,19 @@
+ body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+
+.side-nav.fixed a {
+	display: block;
+	padding: 0 15px;
+	color: #ffebee;
+	/* font-size: 13px; */
+	line-height: 44px;
+	height: 44px;
+}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load materializecss %}
+
+
+
+  
+
+
+
+{% block container %}
+
+
+<div class="progress">
+  <div class="indeterminate"></div>
+</div>
+
+<div class="col s12 m10 l8 offset-m1 offset-l2">
+	{{ form|materializecss }}
+</div>
+
+<a class="waves-effect waves-light btn-large">Ok</a>
+
+{% endblock container %}
