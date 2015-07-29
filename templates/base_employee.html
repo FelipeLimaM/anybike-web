@@ -1,61 +1,51 @@
+{% extends "base.html" %}
 {% load staticfiles %}
 
-<!DOCTYPE html>
-  <html>
-    <head>
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="{% static 'materialize/css/materialize.min.css' %}"  media="screen,projection"/>
-      <link type="text/css" rel="stylesheet" href="{% static 'main.css' %}"/>
-
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-    </head>
-
-    <body>
-
-      <nav>
-        <ul class="letf hide-on-med-and-down">
-          <a href="#" class="brand-logo right"><img width='200px' src="{% static 'logo-top1.png' %}"></a>
-          <ul id="nav-mobile" class="left hide-on-med-and-down">
-            <li><a href="#">Adicionar Cliente</a></li>
-            <li><a href="#">Adicionar Ordem de Serviço</a></li>
-            <li><a href="#">Área do Gerente</a></li>
-          </ul>
-        </ul>
-        <ul id="slide-out" class="side-nav">
-            <li><a href="#">Adicionar Cliente</a></li>
-            <li><a href="#">Adicionar Ordem de Serviço</a></li>
-            <li><a href="#">Área do Gerente</a></li>
-        </ul>
-        <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-      </nav>
 
 
-      <main>
-        <div class="container">
-          {% block container %}
-          {% endblock container %}
-        </div>
-      </main>
-      <footer class="page-footer">
-        <div class="footer-copyright">
-          <div class="container">
-          © 2015 AnyBike
-          <a class="grey-text text-lighten-4 right" href="#!">Projets APS</a>
-          </div>
-        </div>
-      </footer>
-
-
-      <!--Import jQuery before materialize.js-->
-      <script type="text/javascript" src="{% static 'jquery/jquery-2.1.4.min.js' %}"></script>
-      <!-- // <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script> -->
-      <script type="text/javascript" src="{% static 'materialize/js/materialize.min.js' %}"></script>
-
-      <script type="text/javascript" src="{% static 'main.js' %}"></script>
+{% block navbar %}
+  <nav>
+    <ul class="letf hide-on-med-and-down">
+      <a href="#" class="brand-logo right"><img width='200px' src="{% static 'logo-top1.png' %}"></a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a link={% url "Add_client" %}>Adicionar Cliente</a></li>
+        <li><a link={% url "Add_order_service" %}>Adicionar Ordem de Serviço</a></li>
+        <li><a link={% url "login" %}>Área do Gerente</a></li>
+      </ul>
+    </ul>
+    <ul id="slide-out" class="side-nav">
+        <li><a link={% url "Add_client" %}>Adicionar Cliente</a></li>
+        <li><a link={% url "Add_order_service" %}>Adicionar Ordem de Serviço</a></li>
+        <li><a link={% url "login" %}>Área do Gerente</a></li>
+    </ul>
+    <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+  </nav>
+{% endblock navbar %}
 
 
 
-    </body>
-  </html>
+{% block container %}
+  <div class="container" id="container_app" >        
+  </div>
+{% endblock container %}
+
+
+
+{% block footer %}
+  <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container">
+      © 2015 AnyBike
+        <a class="grey-text text-lighten-4 right" href="#!">Projets APS</a>
+      </div>
+    </div>
+  </footer>
+  <div id="load" hidden>
+    <div class="progress">
+      <div class="indeterminate"></div>
+    </div>
+  </div>
+{% endblock footer %}       
+      
+      
 

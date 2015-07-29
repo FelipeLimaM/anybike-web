@@ -2,9 +2,8 @@
 from django.db import models
 from django.utils.translation import ugettext as _
 from django.contrib.auth.models import User
-from phonenumber_field.modelfields import PhoneNumberField
-from localflavor.br.forms import BRCPFField,BRCNPJField
-from localflavor.br.forms import BRPhoneNumberField
+
+
 
 class Client(models.Model):
     class Meta:
