@@ -7,35 +7,40 @@
   <nav>
     <ul class="letf hide-on-med-and-down">
       <a href="#" class="brand-logo right"><img width='200px' src="{% static 'logo-top1.png' %}"></a>
-      <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li><a link={% url "Add_client" %}>Adicionar Cliente</a></li>
-        <li><a link={% url "Add_order_service" %}>Adicionar Ordem de Serviço</a></li>
-        <li><a link={% url "login" %}>Área do Gerente</a></li>
-        <li><a link={% url "logout" %}>sair</a></li>
-        
-      </ul>
-    </ul>
-    <ul id="slide-out" class="side-nav">
-        <li><a link={% url "Add_client" %}>Adicionar Cliente</a></li>
-        <li><a link={% url "Add_order_service" %}>Adicionar Ordem de Serviço</a></li>
-        <li><a link={% url "login" %}>Área do Gerente</a></li>
-        <li><a link={% url "logout" %}>sair</a></li>
     </ul>
     <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+    <ul id="slide-out" class="side-nav fixed" style="width: 240px;">
+      <li><a link={% url "Add_employee" %}>Adicionar Funcionario</a></li>
+      <li><a link={% url "Add_service" %}>Adicionar Serviço</a></li>
+      <li><a link={% url "Performace_employee" %}>Desempelho dos Funcionarios</a></li>
+      <li><a link={% url "Report_services" %}>Relatorios dos Serviços</a></li>
+      <li><a href={% url "logout" %}>Sair</a></li>
+    </ul>
   </nav>
+  
 {% endblock navbar %}
 
 
 
 {% block container %}
-  <div class="container" id="container_app" >        
+
+  <div class="row">
+    <div class="">
+      <div class="container"  id="container_app">
+             
+      </div>
+    </div>
   </div>
+      
+
+  
 {% endblock container %}
 
 
 
 {% block footer %}
-  <footer class="page-footer">
+
+  <footer class="page-footer offset-">
     <div class="footer-copyright">
       <div class="container">
       © 2015 AnyBike

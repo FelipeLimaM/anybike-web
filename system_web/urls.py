@@ -12,7 +12,6 @@ urlpatterns = [
     url(r'^report_services', views.Report_services, name='Report_services'),
 
 
-
     url(r'^login_manager$', 'django.contrib.auth.views.login', name='login'),
-    url(r'^logout/$', 'django.contrib.auth.views.logout', name='logout'),
+    url(r'^logout/$', views.Logout , name='logout'),
 ]

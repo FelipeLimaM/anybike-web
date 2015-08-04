@@ -1,4 +1,8 @@
 from django.shortcuts import render
+from django.contrib.auth import logout 
+from django.shortcuts import redirect
+from django.core.urlresolvers import reverse
+
 from forms import ClientForm, EmployeeForm, OrderServiceForm, ServiceForm
 
 def Index(request):
@@ -9,7 +13,6 @@ def Add_client(request):
 
 def Add_order_service(request):
     return render(request, 'add_order_service.html', {'form':OrderServiceForm})
-
 
 def Add_employee(request):
     return render(request, 'add_employee.html', {'form': EmployeeForm})
@@ -22,3 +25,8 @@ def Performace_employee(request):
 
 def Report_services(request):
     return render(request, 'report_services.html', {})
+
+def Logout (request):
+    if request.user.is_authenticated():
+        logout(request)
+    return redirect(reverse('index'))
