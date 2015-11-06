@@ -1,5 +1,8 @@
+{% extends "base.html" %}
 {% load materializecss %}
 
+
+{% block container %}
 <ul class="collapsible popout" data-collapsible="accordion">
     <li>
       <div class="collapsible-header"><i class="material-icons">settings</i>Funcionário 1</div>
@@ -42,4 +45,5 @@
     </li>
   </ul>
 
+{% endblock container %}
 

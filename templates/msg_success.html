@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load materializecss %}
+
+{% block container %}
+<div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Sucesso</h4>
+      <p>{{msg}}</p>
+    </div>
+    <div class="modal-footer">
+      <a href="{% url "index" %}" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+
+{% endblock container %}
+
+{% block script %}
+	<script type="text/javascript">
+		$('#modal1').openModal();
+	</script>
+{% endblock script %}

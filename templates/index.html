@@ -1,5 +1,2 @@
-{% if user.is_anonymous %}
-	{% include "base_employee.html" %}
-{% else %}
-	{% include "base_manager.html" %}
-{% endif %}
+{% extends "base.html" %}
+{% load materializecss %}

@@ -1,6 +1,12 @@
+{% extends "base.html" %}
 {% load materializecss %}
 
-<div class="col s12 m10 l8 offset-m1 offset-l2">
-	{{ form|materializecss }}
-	<a class="waves-effect waves-light btn-large red lighten-1">Ok</a>
-</div>
+
+{% block container %}
+    <form class="col s12 m10 l8 offset-m1 offset-l2" method="post" role="form">
+        {% csrf_token %}
+		{{ form|materializecss }}
+		<button type="submit" class="waves-effect waves-light btn-large red lighten-1">Adicionar</button>
+	</form>
+{% endblock container %}
+

@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 from django.utils.translation import ugettext as _
-from django.contrib.auth.models import User
 
 
 
@@ -29,11 +28,7 @@ class Employee(models.Model):
     first_name = models.CharField(max_length=80, blank=False, null=True, verbose_name=u'Nome')
     address = models.CharField(max_length=200, blank=False, null=True, verbose_name=u'Endereço')
     phone_number = models.CharField(max_length=9, blank=False, null=True, verbose_name=u'Telefone')
-    date_birth = models.DateField( verbose_name=u'Data de nascimento')
-
-    #TODO address
-     
-
+    date_birth = models.DateField(verbose_name=u'Data de nascimento')
 
 class Service(models.Model):
     class Meta:
@@ -47,9 +42,6 @@ class Service(models.Model):
 
     def __str__(self):
         return str (self.name_type)
-
-
-
 
 
 class OrderService(models.Model):
