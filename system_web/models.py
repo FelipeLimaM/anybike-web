@@ -12,11 +12,10 @@ class Client(models.Model):
 
     #Attrs
     
-    first_name = models.CharField(max_length=80, blank=False, null=True, verbose_name=u'Primeiro Nome')
-    last_name = models.CharField(max_length=120, blank=False, null=True, verbose_name=u'Sobrenome')
+    cpf = models.CharField(max_length=11, blank=False, null=True, verbose_name=u'CPF')
+    first_name = models.CharField(max_length=80, blank=False, null=True, verbose_name=u'Nome')
     address = models.CharField(max_length=200, blank=False, null=True, verbose_name=u'Endereço')
     phone_number = models.CharField(max_length=9, blank=False, null=True, verbose_name=u'Telefone')
-    cpf = models.CharField(max_length=11, blank=False, null=True, verbose_name=u'CPF')
 
     def __str__(self):
         return str (self.user.firstname)
@@ -25,23 +24,12 @@ class Employee(models.Model):
     class Meta:
         verbose_name = _('Funcionario')
         verbose_name_plural = _('Funcionarios')
-
-    marital_status = (
-        ('s', _('Solteiro')),
-        ('c', _('Casado')),
-        ('v', _('Viuvo')),
-        ('m', _('Masiado')),
-        ('o', _('Outros')),
-    )
-
     #Attrs
-    date_birth = models.DateField( verbose_name=u'Data de nascimento')
-    first_name = models.CharField(max_length=80, blank=False, null=True, verbose_name=u'Primeiro Nome')
-    last_name = models.CharField(max_length=120, blank=False, null=True, verbose_name=u'Sobrenome')
-    civil_status = models.CharField(max_length=1, choices=marital_status , default='s', verbose_name=u'Estado Civil')
+    cpf = models.CharField(max_length=11, blank=False, null=True, verbose_name=u'CPF')
+    first_name = models.CharField(max_length=80, blank=False, null=True, verbose_name=u'Nome')
     address = models.CharField(max_length=200, blank=False, null=True, verbose_name=u'Endereço')
     phone_number = models.CharField(max_length=9, blank=False, null=True, verbose_name=u'Telefone')
-    cpf = models.CharField(max_length=11, blank=False, null=True, verbose_name=u'CPF')
+    date_birth = models.DateField( verbose_name=u'Data de nascimento')
 
     #TODO address
      
