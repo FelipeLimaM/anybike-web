@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'^add_service', views.Add_service, name='Add_service'),
     url(r'^performace_employee', views.Performace_employee, name='Performace_employee'),
     url(r'^report_services', views.Report_services, name='Report_services'),
+    url(r'^ajax/getvalue',views.getvalue, name="getvalue"),
 
 
     url(r'^login_manager$', 'django.contrib.auth.views.login', name='login'),

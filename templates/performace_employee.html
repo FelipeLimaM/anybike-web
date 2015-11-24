@@ -1,2 +1,45 @@
+{% extends "base.html" %}
 {% load materializecss %}
 
+
+{% block container %}
+<ul class="collapsible popout" data-collapsible="accordion">
+  {% for item in data %}
+    <li>
+      <div class="collapsible-header"><i class="material-icons">perm_identity</i>{{item.name}}</div>
+      <div class="collapsible-body">
+            <table>
+              <thead>
+                <tr>
+                    <th data-field="id">Cliente</th>
+                    <th data-field="name">Data</th>
+                    <th data-field="price">Valor</th>
+                </tr>
+              </thead>
+                <tbody>
+                	{% for i in item.list %}
+	                  <tr>
+	                    <td>{{i.client}}</td>
+	                    <td>{{i.date_time}}</td>
+	                    <td>{{i.value}}</td>
+	                  </tr>
+    							{% endfor %}
+
+    								<tr>
+	                    <td></td>
+	                    <td></td>
+	                    <td></td>
+	                  </tr>
+    								<tr>
+	                    <td>Valor Total</td>
+	                    <td></td>
+	                    <td>{{item.total}}</td>
+	                  </tr>	                  
+                </tbody>
+              </table>
+              <br>
+              <br>
+      </div>
+    </li>
+    {% endfor %}
+{% endblock container %}

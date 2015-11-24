@@ -11,24 +11,28 @@ class Client(models.Model):
 
     #Attrs
     
-    cpf = models.CharField(max_length=11, blank=False, null=True, verbose_name=u'CPF')
+    cpf = models.CharField(max_length=14, blank=False, null=True, verbose_name=u'CPF')
     first_name = models.CharField(max_length=80, blank=False, null=True, verbose_name=u'Nome')
     address = models.CharField(max_length=200, blank=False, null=True, verbose_name=u'Endereço')
-    phone_number = models.CharField(max_length=9, blank=False, null=True, verbose_name=u'Telefone')
+    phone_number = models.CharField(max_length=14, blank=False, null=True, verbose_name=u'Telefone')
 
     def __str__(self):
-        return str (self.user.firstname)
+        return str (self.first_name)
 
 class Employee(models.Model):
     class Meta:
         verbose_name = _('Funcionario')
         verbose_name_plural = _('Funcionarios')
     #Attrs
-    cpf = models.CharField(max_length=11, blank=False, null=True, verbose_name=u'CPF')
+    cpf = models.CharField(max_length=14, blank=False, null=True, verbose_name=u'CPF')
     first_name = models.CharField(max_length=80, blank=False, null=True, verbose_name=u'Nome')
     address = models.CharField(max_length=200, blank=False, null=True, verbose_name=u'Endereço')
-    phone_number = models.CharField(max_length=9, blank=False, null=True, verbose_name=u'Telefone')
-    date_birth = models.DateField(verbose_name=u'Data de nascimento')
+    phone_number = models.CharField(max_length=14, blank=False, null=True, verbose_name=u'Telefone')
+    date_birth = models.TextField(verbose_name=u'Data de nascimento')
+
+    def __str__(self):
+        return str (self.first_name)
+
 
 class Service(models.Model):
     class Meta:
@@ -50,11 +54,11 @@ class OrderService(models.Model):
         verbose_name_plural = _(u'Ordens de Serviços')
 
     #Attrs
-    Clent = models.ForeignKey(Client)
+    client = models.ForeignKey(Client, verbose_name=u'Cliente')
     service = models.ManyToManyField(Service)
     description = models.TextField(verbose_name=u'Descrição do serviço')
-    employee = models.ForeignKey(Employee)
-    date_time = models.DateTimeField()
+    employee = models.ForeignKey(Employee, verbose_name=u'Funcionarios Responsável')
+    date_time = models.TextField(verbose_name=u'data da entrega')
     value = models.FloatField(verbose_name=u'valor do serviços')
     
 
